@@ -172,8 +172,7 @@ h2:hover {
 .curriculum {
     display: flex;
     flex-direction: column;
-    height: 45vh;
-
+    margin-top: 30px;
     gap: 20px;
 }
 
