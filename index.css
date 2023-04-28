@@ -266,7 +266,9 @@ h2:hover {
 
 .title {
     color: #f8f8fe;
-    text-align: center;
+   display: flex;
+    justify-content: center;
+    
 }
 
 /* MEDIA QUERIES!!!!!!!! */
