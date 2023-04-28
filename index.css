@@ -264,6 +264,11 @@ h2:hover {
     font-size: 0.96em;
 }
 
+.title {
+    text-align: center;
+    color: #f8f8fe;
+}
+
 /* MEDIA QUERIES!!!!!!!! */
 
 @media (max-width: 768px) {
