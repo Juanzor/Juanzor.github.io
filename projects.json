@@ -1,0 +1,70 @@
+[
+    {
+        "title": "Pipe Bot",
+        "desc": "Bot de WhatsApp con personalidad argentina desarrollado en Node.js. Integra modelos de IA (Claude/Gemini) para respuestas contextuales con memoria, búsqueda web en tiempo real, transcripción/generación de audios y gestión de recordatorios automatizados.",
+        "tags": [
+            "Node.js",
+            "Baileys",
+            "OpenRouter",
+            "TTS"
+        ],
+        "img": "images/bot-whatssap.png",
+        "link": "",
+        "featured": true
+    },
+    {
+        "title": "ShortUrl",
+        "desc": "Acortador de URLs con autenticación por mail y perfiles de usuario.",
+        "tags": [
+            "MongoDB",
+            "Passport"
+        ],
+        "img": "images/shorturl.png",
+        "link": "https://shorturl-6yy7.onrender.com/"
+    },
+    {
+        "title": "WaDirect",
+        "desc": "Extensión de Chrome para enviar mensajes de WhatsApp sin agendar contactos, con gestión inteligente de pestañas.",
+        "tags": [
+            "JavaScript",
+            "Chrome API",
+            "CSS"
+        ],
+        "img": "images/whatsapp_extension.png",
+        "link": "https://github.com/Juanzor/wadirect",
+        "featured": true
+    },
+    {
+        "title": "Dashboard Analytics",
+        "desc": "Panel de métricas en tiempo real consumiendo API de perfumall.",
+        "tags": [
+            "React",
+            "Chart.js"
+        ],
+        "img": "images/dashboard.png",
+        "link": "https://dashboard-tmwc.onrender.com"
+    },
+    {
+        "title": "Perfumall",
+        "desc": "E-commerce completo con gestión de inventario y panel administrativo.",
+        "tags": [
+            "Node",
+            "MySQL",
+            "React"
+        ],
+        "img": "images/perfumall2.png",
+        "link": "https://perfumall-mv7u.onrender.com/",
+        "featured": true
+    },
+    {
+        "title": "API REST ShortUrl V2",
+        "desc": "API segura con JWT y gestión avanzada de refresh tokens.",
+        "tags": [
+            "Node",
+            "Express",
+            "JWT"
+        ],
+        "img": "images/apishort.png",
+        "link": "https://shorturlv2-api.onrender.com/"
+    }
+]

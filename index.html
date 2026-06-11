@@ -1,298 +1,543 @@
 <!DOCTYPE html>
-<html lang="en">
-    <head>
-        <meta charset="UTF-8" />
-        <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-        <link rel="preconnect" href="https://fonts.googleapis.com" />
-        <link rel="stylesheet" href="index.css" />
-        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-        <link
-            href="https://fonts.googleapis.com/css2?family=Kumbh+Sans:wght@400;700&family=Roboto:ital,wght@0,300;0,400;0,700;1,300&display=swap"
-            rel="stylesheet"
-        />
-        <link rel="stylesheet" href="slider.css" />
-        <link rel="shortcut icon" href="./images/earth.svg" />
-        <script
-            src="https://kit.fontawesome.com/bda3cd9edc.js"
-            crossorigin="anonymous"
-        ></script>
-        <title>Juanzor</title>
-    </head>
-    <body>
-        <div class="contenedor-header">
-            <header>
-                <div class="logo">
-                    <a href="#">Juanzor</a>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="description"
+        content="Juan Agustín Heredia - Backend Developer especializado en AWS, Java, Python y microservicios." />
+    <title>Juan Heredia · Backend Developer</title>
+
+    <!-- Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+        href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=JetBrains+Mono:wght@400;500&display=swap"
+        rel="stylesheet" />
+
+    <!-- Icons -->
+    <script src="https://kit.fontawesome.com/bda3cd9edc.js" crossorigin="anonymous"></script>
+
+    <link rel="shortcut icon" href="./images/favicon.png" />
+    <link rel="stylesheet" href="index.css" />
+    <!-- Smooth Scroll Library -->
+    <script src="https://unpkg.com/lenis@1.1.20/dist/lenis.min.js"></script>
+</head>
+
+<body class="reveal-content">
+
+    <!-- ══════════════ HEADER ══════════════ -->
+    <div class="header-wrap">
+        <header>
+            <a href="#hero" class="logo">JH<span class="logo-dot">.</span></a>
+            <nav id="main-nav">
+                <ul>
+                    <li><a href="#hero">Inicio</a></li>
+                    <li><a href="#about">Sobre mí</a></li>
+                    <li><a href="#experience">Experiencia</a></li>
+                    <li><a href="#education">Educación</a></li>
+                    <li><a href="#skills">Skills</a></li>
+                    <li><a href="#projects">Portfolio</a></li>
+                    <li><a href="#contact" class="nav-cta">Contacto</a></li>
+                </ul>
+            </nav>
+            <button class="hamburger" id="hamburger" aria-label="Abrir menú">
+                <span></span><span></span><span></span>
+            </button>
+        </header>
+    </div>
+
+    <main>
+
+        <!-- ══════════════ HERO ══════════════ -->
+        <section id="hero" class="hero">
+            <div class="hero-bg-grid"></div>
+            <div class="hero-content">
+                <p class="hero-tag"><span class="tag-dot"></span> Disponible</p>
+                <h1 class="hero-name">Juan Agustín<br /><span class="gradient-text">Heredia</span></h1>
+                <p class="hero-role">Backend Developer</p>
+                <div class="hero-actions">
+                    <a href="#about" class="btn btn-primary">Sobre mí <i class="fa-solid fa-arrow-down"></i></a>
                 </div>
-                <nav>
-                    <ul>
-                        <li><a href="#inicio">INICIO</a></li>
-                        <li><a href="#sobremi">SOBRE MI</a></li>
-                        <li><a href="#skills">SKILLS</a></li>
-                        <li><a href="#portfolio">PORTFOLIO</a></li>
-                        <li><a href="#curriculum">CURRICULUM</a></li>
-                    </ul>
-                </nav>
-            </header>
+            </div>
+            <div class="hero-visual">
+                <div class="code-card">
+                    <div class="code-card-header">
+                        <span class="dot red"></span><span class="dot yellow"></span><span class="dot green"></span>
+                        <span class="code-filename">backend.java</span>
+                    </div>
+                    <pre class="code-body"><code><span class="c-kw">@RestController</span>
+<span class="c-kw">public class</span> <span class="c-cls">BackendInfoController</span> {
+  <span class="c-kw">@GetMapping</span>(<span class="c-str">"/status"</span>)
+  <span class="c-kw">public</span> Map <span class="c-fn">check</span>() {
+    <span class="c-kw">return</span> Map.<span class="c-fn">of</span>(
+      <span class="c-str">"role"</span>, <span class="c-str">"Backend Developer"</span>,
+      <span class="c-str">"focus"</span>, <span class="c-str">"Scalability"</span>,
+      <span class="c-str">"status"</span>, <span class="c-str">"Online"</span>
+    );
+  }
+}</code></pre>
+                </div>
+            </div>
+            <div class="scroll-indicator">
+                <span></span>
+            </div>
+        </section>
+
+        <!-- ══════════════ SOBRE MÍ ══════════════ -->
+        <section id="about" class="section about">
+            <div class="container animate-up">
+                <div class="section-label">Sobre mí</div>
+                <div class="about-grid">
+                    <div class="about-text">
+                        <h2 class="section-title">Desarrollador <span class="gradient-text">backend</span></h2>
+                        <p>
+                            Especializado en la creación de soluciones escalables y arquitecturas de microservicios
+                            eficientes. Actualmente en <a href="https://www.certant.com/" target="_blank"
+                                class="company-link"><strong>Certant</strong></a>, gestionando infraestructuras
+                            en AWS para el sector financiero.
+                        </p>
+                        <p>
+                            Mi enfoque principal es el desarrollo de APIs robustas y el procesamiento masivo de datos
+                            (ETL), garantizando un alto rendimiento y mantenibilidad del código.
+                        </p>
+                        <div class="about-info">
+                            <div class="info-item">
+                                <i class="fa-solid fa-cloud"></i>
+                                <span>Cloud AWS (Glue, SQS, SNS, S3, Lambda)</span>
+                            </div>
+                            <div class="info-item">
+                                <i class="fa-solid fa-server"></i>
+                                <span>Java (Spring Boot) & Python (Spark)</span>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="about-stats">
+                        <div class="stat-card">
+                            <span class="stat-number">2+</span>
+                            <span class="stat-label">Años de experiencia</span>
+                        </div>
+                        <div class="stat-card">
+                            <span class="stat-number">AWS</span>
+                            <span class="stat-label">Cloud principal</span>
+                        </div>
+                        <div class="stat-card">
+                            <span class="stat-number">SQS</span>
+                            <span class="stat-label">Sistemas asíncronos</span>
+                        </div>
+                        <div class="stat-card">
+                            <span class="stat-number">JOBS</span>
+                            <span class="stat-label">Procesamiento ETL</span>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+        </section>
+
+        <!-- ══════════════ EXPERIENCIA LABORAL ══════════════ -->
+        <section id="experience" class="section experience">
+            <div class="container animate-up">
+                <div class="section-label">Experiencia</div>
+                <h2 class="section-title">Trayectoria <span class="gradient-text">laboral</span></h2>
+
+                <div class="certant-focus">
+                    <div class="experience-card featured-job">
+                        <div class="job-header">
+                            <div class="job-meta">
+                                <span class="job-badge">Actual</span>
+                                <h3>Backend Developer</h3>
+                                <span class="job-company"><a href="https://www.certant.com/" target="_blank"
+                                        class="company-link">Certant</a></span>
+                            </div>
+                            <span class="job-date">2024 – Presente</span>
+                        </div>
+                        <div class="job-body">
+                            <p class="job-intro">Responsable de modernización de sistemas en AWS y del
+                                desarrollo de servicios backend cloud para Itaú, enfocados en notificaciones
+                                masivas, gestión de campañas y procesamiento de grandes volúmenes de datos.</p>
+                            <ul class="job-list">
+                                <li>Modernización y migración de sistemas heredados en <strong>COBOL</strong> hacia
+                                    arquitecturas modernas y serverless en <strong>AWS</strong>.</li>
+                                <li>Diseño y desarrollo de <strong>funciones AWS Lambda</strong> y procesamiento de
+                                   <strong>Jobs</strong>  implementando <strong>caché distribuida</strong>.</li>
+                                <li>Diseño de <strong>microservicios en AWS</strong> con Spring Boot para migración y
+                                    desacoplamiento de tareas asíncronas.</li>
+                                <li>Gestión y escalado de flujos de notificaciones masivas (Push, SMS, Email) mediante
+                                    <strong>AWS SQS y SNS</strong>.
+                                </li>
+                                <li>Desarrollo de Jobs en <strong>AWS Glue</strong> con Python/Spark para procesamiento
+                                    ETL e integración de datos masivos.</li>
+                                <li>Mantenimiento de aplicacion web administrativa para empleados (Spring Boot + Angular).</li>
+                            </ul>
+                            <div class="tech-tags">
+                                <span>Java</span><span>Spring Boot</span><span>AWS Glue</span><span>Lambda</span>
+                                <span>SQS</span><span>SNS</span><span>S3</span><span>Python</span><span>Spark</span>
+                                <span>COBOL</span><span>Redis</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+        </section>
+
+        <!-- ══════════════ FORMACIÓN ACADÉMICA ══════════════ -->
+        <section id="education" class="section education">
+            <div class="container animate-up">
+                <div class="section-label">Educación</div>
+                <h2 class="section-title">Formación <span class="gradient-text">académica</span></h2>
+                <div class="education-grid-v2">
+                    <a href="https://www.unlam.edu.ar/" target="_blank" class="edu-card-v2">
+                        <div class="edu-icon"><i class="fa-solid fa-graduation-cap"></i></div>
+                        <div class="edu-info">
+                            <h3>Tecnicatura en Desarrollo Web</h3>
+                            <p>Universidad Nacional de La Matanza (UNLaM)</p>
+                            <span class="edu-date">2023 – En curso</span>
+                        </div>
+                        <div class="edu-arrow"><i class="fa-solid fa-arrow-up-right-from-square"></i></div>
+                    </a>
+                    <a href="https://www.digitalhouse.com/" target="_blank" class="edu-card-v2">
+                        <div class="edu-icon"><i class="fa-solid fa-certificate"></i></div>
+                        <div class="edu-info">
+                            <h3>Fullstack Developer</h3>
+                            <p>Digital House</p>
+                            <span class="edu-date">2022 – 2023</span>
+                        </div>
+                        <div class="edu-arrow"><i class="fa-solid fa-arrow-up-right-from-square"></i></div>
+                    </a>
+                    <a href="https://www.educacionit.com/" target="_blank" class="edu-card-v2">
+                        <div class="edu-icon"><i class="fa-solid fa-award"></i></div>
+                        <div class="edu-info">
+                            <h3>Certificaciones Técnicas</h3>
+                            <p>Educación IT · Java Web · JS Avanzado · Git</p>
+                            <span class="edu-date">2023</span>
+                        </div>
+                        <div class="edu-arrow"><i class="fa-solid fa-arrow-up-right-from-square"></i></div>
+                    </a>
+                </div>
+
+            </div>
+        </section>
+
+        <!-- ══════════════ TECH STACK ══════════════ -->
+        <section id="skills" class="section skills">
+            <div class="container animate-up">
+                <div class="section-label">Skills</div>
+                <h2 class="section-title">Stack <span class="gradient-text">Técnico</span></h2>
+                <div class="skills-grid-clean">
+
+                    <!-- Card 1: Backend & Cloud -->
+                    <div class="skill-card-v2">
+                        <div class="skill-card-header">
+                            <i class="fa-solid fa-server"></i>
+                            <h3>Backend & Cloud Infrastructure</h3>
+                        </div>
+                        <div class="tech-ticker-contained">
+                            <div class="ticker-track track-1">
+                                <div class="ticker-item"><span>Java / Spring Boot</span></div>
+                                <div class="ticker-item"><span>Python / Spark</span></div>
+                                <div class="ticker-item"><span>AWS Glue / ETL</span></div>
+                                <div class="ticker-item"><span>SQS / SNS / S3</span></div>
+                                <div class="ticker-item"><span>AWS Lambda / Serverless</span></div>
+                                <div class="ticker-item"><span>COBOL Modernization</span></div>
+                                <div class="ticker-item"><span>Redis / Distributed Cache</span></div>
+                                <div class="ticker-item"><span>MySQL / MongoDB</span></div>
+                                <div class="ticker-item"><span>Docker / Linux</span></div>
+                                <div class="ticker-item"><span>Node.js / Express</span></div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Card 2: Frontend & Tools -->
+                    <div class="skill-card-v2">
+                        <div class="skill-card-header">
+                            <i class="fa-solid fa-screwdriver-wrench"></i>
+                            <h3>Frontend & Tools</h3>
+                        </div>
+                        <div class="tech-ticker-contained">
+                            <div class="ticker-track track-2">
+                                <div class="ticker-item"><span>Angular</span></div>
+                                <div class="ticker-item"><span>React</span></div>
+                                <div class="ticker-item"><span>TypeScript / JS</span></div>
+                                <div class="ticker-item"><span>Git / GitHub</span></div>
+                                <div class="ticker-item"><span>SASS / CSS3</span></div>
+                                <div class="ticker-item"><span>Agile / SCRUM</span></div>
+                            </div>
+                        </div>
+                    </div>
+
+                </div>
+
+            </div>
+        </section>
+
+        <!-- ══════════════ PORTFOLIO ══════════════ -->
+        <section id="projects" class="section projects">
+            <div class="container animate-up">
+                <div class="section-label">Portfolio</div>
+                <h2 class="section-title">Proyectos <span class="gradient-text">seleccionados</span></h2>
+                <div class="projects-grid-fixed" id="projects-container">
+                    <!-- Los proyectos se cargan dinámicamente desde JS -->
+                </div>
+
+            </div>
+        </section>
+
+        <!-- ══════════════ CONTACTO ══════════════ -->
+        <section id="contact" class="section contact">
+            <div class="container animate-up">
+                <div class="contact-wrapper">
+                    <div class="contact-content">
+                        <div class="section-label">Contacto</div>
+                        <h2 class="section-title">Trabajemos <span class="gradient-text">juntos</span></h2>
+                        <p class="contact-desc-new">
+                            ¿Estás buscando potenciar tu equipo con un desarrollador backend, o tenés algún proyecto en
+                            mente? Estoy abierto a nuevas oportunidades.
+                        </p>
+                        <a href="./CV_Heredia_Juan_Backend.pdf" target="_blank" class="btn btn-primary btn-cv-contact">
+                            <i class="fa-solid fa-file-arrow-down"></i> Descargar CV
+                        </a>
+                    </div>
+                    <div class="contact-methods-list">
+                        <a href="https://wa.me/5491124986125" target="_blank" class="contact-strip">
+                            <i class="fa-brands fa-whatsapp"></i>
+                            <span class="strip-value">+54 9 11 2498-6125</span>
+                        </a>
+                        <a href="mailto:hjuan7217@gmail.com" class="contact-strip">
+                            <i class="fa-solid fa-envelope"></i>
+                            <span class="strip-value">hjuan7217@gmail.com</span>
+                        </a>
+                        <a href="https://www.linkedin.com/in/juan-agustin-heredia-29a1731b4/" target="_blank"
+                            class="contact-strip">
+                            <i class="fa-brands fa-linkedin"></i>
+                            <span class="strip-value">LinkedIn</span>
+                        </a>
+                        <a href="https://github.com/Juanzor" target="_blank" class="contact-strip">
+                            <i class="fa-brands fa-github"></i>
+                            <span class="strip-value">GitHub</span>
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+    </main>
+
+    <footer class="footer">
+        <div class="container">
+
+            <p>Juan Agustín Heredia · 2025</p>
         </div>
-        <main>
-            <section class="inicio" id="inicio">
-                <div class="contenido-banner">
-                    <h1>JUAN AGUSTIN HEREDIA</h1>
-                    <div class="info-container">
-                        <div>
-                            <h2>FULLSTACK DEVELOPER</h2>
+    </footer>
 
-                            <div class="redes">
-                                <a
-                                    target="_blank"
-                                    href="https://www.linkedin.com/in/juan-agustin-heredia-29a1731b4/"
-                                    ><i class="fa-brands fa-linkedin icono"></i
-                                ></a>
-                                <a target="_blank" href="https://github.com/Juanzor"
-                                    ><i class="fa-brands fa-github icono"></i
-                                ></a>
-                                <a href="mailto: hjuan7217@gmail.com"
-                                    ><i class="fa-solid fa-envelope icono"></i
-                                ></a>
+
+    <script>
+        // Hamburguesa
+        const hb = document.getElementById('hamburger');
+        const nv = document.getElementById('main-nav');
+        hb.onclick = () => { hb.classList.toggle('active'); nv.classList.toggle('open'); };
+
+        // Scroll Reveal Suave
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.classList.add('is-visible');
+                }
+            });
+        }, { threshold: 0.1 });
+
+        document.querySelectorAll('.animate-up').forEach(el => observer.observe(el));
+
+        // ── Lenis Smooth Scroll Initialization ──
+        const lenis = new Lenis({
+            duration: 0.9,
+            easing: (t) => Math.min(1, 1.001 - Math.pow(2, -10 * t)),
+            orientation: 'vertical',
+            gestureOrientation: 'vertical',
+            smoothWheel: true,
+            wheelMultiplier: 1.2,
+            touchMultiplier: 2,
+            infinite: false,
+        })
+
+        function raf(time) {
+            lenis.raf(time)
+            requestAnimationFrame(raf)
+        }
+        requestAnimationFrame(raf)
+
+        // ── Smooth scroll con Lenis ──
+        document.querySelectorAll('a[href^="#"]').forEach(link => {
+            link.addEventListener('click', e => {
+                const href = link.getAttribute('href');
+                const target = document.querySelector(href);
+                if (!target) return;
+                e.preventDefault();
+
+                const offset = document.querySelector('.header-wrap').offsetHeight + 8;
+                lenis.scrollTo(target, { offset: -offset });
+
+                // Cierra menú mobile si está abierto
+                document.getElementById('main-nav').classList.remove('open');
+                document.getElementById('hamburger').classList.remove('active');
+            });
+        });
+
+        // ── Scroll Spy (Navbar Active State) ──
+        const navLinks = document.querySelectorAll('#main-nav a');
+        const sections = document.querySelectorAll('section[id]');
+
+        function scrollSpy() {
+            let current = "";
+            const offset = document.querySelector('.header-wrap').offsetHeight + 100;
+
+            sections.forEach((section) => {
+                const sectionTop = section.offsetTop;
+                if (window.scrollY >= sectionTop - offset) {
+                    current = section.getAttribute("id");
+                }
+            });
+
+            // Forzar 'contact' si estamos al final de la página
+            if (window.innerHeight + window.scrollY >= document.documentElement.scrollHeight - 5) {
+                current = "contact";
+            }
+
+            navLinks.forEach((link) => {
+                link.classList.remove("active");
+                if (link.getAttribute("href") === `#${current}`) {
+                    link.classList.add("active");
+                }
+            });
+        }
+
+        // Lenis emite un evento de scroll que podemos usar para el Spy
+        lenis.on('scroll', scrollSpy);
+        window.addEventListener("load", scrollSpy);
+
+        // ── Ticker Custom JS (Control ultra suave, loop bidireccional perfecto) ──
+        document.querySelectorAll('.tech-ticker-contained').forEach(container => {
+            const track = container.querySelector('.ticker-track');
+            const isReverse = track.classList.contains('track-2');
+            const BASE_SPD = isReverse ? 0.35 : -0.35; // balance ideal
+
+            // Usamos ResizeObserver por si cambia la fuente o el width de la pantalla
+            const initTicker = () => {
+                // Tomamos unicamente los items originales
+                const originalItems = Array.from(track.querySelectorAll('.ticker-item:not(.cloned)'));
+                if (originalItems.length === 0) return;
+
+                // Clonamos la lista original 3 veces extra para tener un buffer gigante
+                // Esto evita que al reiniciar la lista se vea un espacio vacio temporal a la derecha
+                for (let i = 0; i < 3; i++) {
+                    originalItems.forEach(item => {
+                        const clone = item.cloneNode(true);
+                        clone.classList.add('cloned');
+                        track.appendChild(clone);
+                    });
+                }
+
+                // Calculamos matemáticamente la repetición
+                const allItems = track.querySelectorAll('.ticker-item');
+                const originalCount = originalItems.length;
+                const firstItem = allItems[0];
+                const firstDuplicate = allItems[originalCount];
+                const loopWidth = firstDuplicate.offsetLeft - firstItem.offsetLeft;
+
+                let posX = isReverse ? -loopWidth : 0;
+                let vel = BASE_SPD;
+
+                function tick() {
+                    posX += vel;
+                    vel += (BASE_SPD - vel) * 0.02; // inercia mucho más suave
+
+                    // Reseteo matemático perfecto
+                    if (posX <= -loopWidth) posX += loopWidth;
+                    if (posX >= 0) posX -= loopWidth;
+
+                    track.style.transform = `translate3d(${posX}px, 0, 0)`;
+                    track.dataset.frameId = requestAnimationFrame(tick);
+                }
+
+                if (track.dataset.frameId) cancelAnimationFrame(track.dataset.frameId);
+                tick();
+
+                let dragging = false;
+                let lastMouseX = 0;
+
+                const startDrag = (e) => {
+                    dragging = true;
+                    lastMouseX = e.type.includes('touch') ? e.touches[0].clientX : e.clientX;
+                    vel = 0;
+                    container.style.cursor = 'grabbing';
+                    e.preventDefault();
+                };
+
+                const moveDrag = (e) => {
+                    if (!dragging) return;
+                    const currX = e.type.includes('touch') ? e.touches[0].clientX : e.clientX;
+                    const dx = currX - lastMouseX;
+                    posX += dx * 0.85;
+                    vel = dx * 0.25;
+                    lastMouseX = currX;
+                };
+
+                const endDrag = () => {
+                    if (!dragging) return;
+                    dragging = false;
+                    container.style.cursor = 'grab';
+                };
+
+                container.onmousedown = startDrag;
+                window.addEventListener('mousemove', moveDrag);
+                window.addEventListener('mouseup', endDrag);
+
+                container.addEventListener('touchstart', startDrag, { passive: false });
+                window.addEventListener('touchmove', moveDrag, { passive: false });
+                window.addEventListener('touchend', endDrag);
+
+                container.style.cursor = 'grab';
+            };
+
+            // Esperar a que las fuentes/layout estén listos para medir
+            setTimeout(initTicker, 100);
+        });
+
+        // ── Renderizado Dinámico de Proyectos ──
+        async function renderProjects() {
+            const container = document.getElementById('projects-container');
+            if (!container) return;
+
+            try {
+                const response = await fetch('projects.json');
+                const projectsData = await response.json();
+
+                container.innerHTML = projectsData.map(p => `
+                    <a href="${p.link}" target="_blank" class="project-card ${p.featured ? 'featured' : ''}">
+                        <div class="project-img">
+                            <img src="${p.img}" alt="${p.title}" loading="lazy" />
+                        </div>
+                        <div class="project-info">
+                            <h3>${p.title}</h3>
+                            <p>${p.desc}</p>
+                            <div class="tech-tags">
+                                ${p.tags.map(t => `<span>${t}</span>`).join('')}
                             </div>
                         </div>
-                    </div>
-                </div>
-                <div class="icono-js">
-                    <i class="fa-brands fa-square-js js"></i>
-                </div>
-            </section>
+                    </a>
+                `).join('');
+            } catch (error) {
+                console.error("Error cargando los proyectos:", error);
+                container.innerHTML = `<p style="grid-column: 1/-1; text-align: center; color: var(--text-muted);">Error al cargar los proyectos. Por favor, intenta de nuevo más tarde.</p>`;
+            }
+        }
 
-            <section class="sobremi" id="sobremi">
-                <div class="info-sobremi">
-                    <p>
-                        Mi nombre es Juan Agustín Heredia y tengo conocimientos en el
-                        stack MERN, además de habilidades blandas adquiridas a través de
-                        experiencia laboral en distintos trabajos en atencion al cliente,
-                        ademas he desarrollado en equipo ya sea en
-                        <a
-                            target="_blank"
-                            href="https://www.digitalhouse.com/ar/productos/programacion/programacion-web-full-stack"
-                            >Digital House</a
-                        >
-                        (Desarrollo web Fullstack) y la
-                        <a target="_blank" href="https://www.unlam.edu.ar/">UnLaM</a>
-                        (Desarrollo mobile) en un entorno de metodologías ágiles.
-                        Me gustaría tener la oportunidad de aplicar mis conocimientos y
-                        habilidades en un ambiente profesional y estoy dispuesto a
-                        aprender lo necesario. Agradezco tu tiempo y
-                        consideración y estaría encantado de proporcionar cualquier
-                        información adicional!.
-                    </p>
-                </div>
-            </section>
-            <section class="skills" id="skills">
-                <div class="slider">
-                    <div class="slide-track">
-                        <div class="slide">
-                            <i class="fa-brands fa-react"></i>
-                        </div>
-                        <div class="slide">
-                            <i class="fa-brands fa-bootstrap"></i>
-                        </div>
-                        <div class="slide">
-                            <i class="fa-brands fa-css3-alt"></i>
-                        </div>
-                        <div class="slide">
-                            <i class="fa-brands fa-html5"></i>
-                        </div>
-                        <div class="slide">
-                            <i class="fa-brands fa-node-js"></i>
-                        </div>
-                        <div class="slide">
-                            <i class="fa-brands fa-js"></i>
-                        </div>
-                        <div class="slide">
-                            <i class="fa-brands fa-java"></i>
-                        </div>
-                        <div class="slide">
-                            <i class="fa-brands fa-github"></i>
-                        </div>
-                        <div class="slide">
-                            <i class="fa-solid fa-database"></i>
-                        </div>
 
-                        <div class="slide">
-                            <i class="fa-brands fa-sass"></i>
-                        </div>
-                        <div class="slide">
-                            <i class="fa-brands fa-android"></i>
-                        </div>
-                        <div class="slide">
-                            <i class="fa-brands fa-react"></i>
-                        </div>
-                        <div class="slide">
-                            <i class="fa-brands fa-bootstrap"></i>
-                        </div>
-                        <div class="slide">
-                            <i class="fa-brands fa-css3-alt"></i>
-                        </div>
-                        <div class="slide">
-                            <i class="fa-brands fa-html5"></i>
-                        </div>
-                        <div class="slide">
-                            <i class="fa-brands fa-node-js"></i>
-                        </div>
-                        <div class="slide">
-                            <i class="fa-brands fa-js"></i>
-                        </div>
-                        <div class="slide">
-                            <i class="fa-brands fa-java"></i>
-                        </div>
-                        <div class="slide">
-                            <i class="fa-brands fa-github"></i>
-                        </div>
-                        <div class="slide">
-                            <i class="fa-solid fa-database"></i>
-                        </div>
 
-                        <div class="slide">
-                            <i class="fa-brands fa-sass"></i>
-                        </div>
-                        <div class="slide">
-                            <i class="fa-brands fa-android"></i>
-                        </div>
-                        <div class="slide">
-                            <div>
-                                <img src="visual.png" alt="" />
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </section>    
-            <section class="portfolio" id="portfolio">
-                <a href="https://perfumall-mv7u.onrender.com/" target="_blank">
-                    <div class="card">
-                        <div class="card-img-container">
-                            <img src="images/perfumall2.png" alt="" />
-                        </div>
-                        <div class="info">
-                            <h1>Perfumall</h1>
-                            <p>
-                                Pagina web de compra y venta de perfumes desarrollada en
-                                equipo usando tecnologias como Javascript, Node, Express,
-                                MySql, Sequelize, Template Engines, Bootstrap, etc.
-                                Registro y login de usuarios comunes y administradores,
-                                los cuales podran cargar sus productos a la base de datos.
-                                Asi mismo, se realizó una api para consumirla en un
-                                dashboard con React. Trabajo realizado en un entorno con
-                                metodologías ágiles
-                            </p>
-                        </div>
-                    </div>
-                </a>
+        renderProjects();
+    </script>
+</body>
 
-                <a href="https://shorturl-6yy7.onrender.com/" target="_blank">
-                    <div class="card">
-                        <div class="card-img-container">
-                            <img src="images/shorturl.png" alt="" />
-                        </div>
-                        <div class="info">
-                            <h1>ShortUrl</h1>
-                            <p>
-                                Acortador de URLS, en el que el usuario podrá registrarse,
-                                confirmar su cuenta con su mail, y loguearse. Tener
-                                guardadas sus propias urls acortadas y un perfil donde
-                                podra consultar sus datos y foto perfil. Para lograr esto
-                                todo esto, se empleó passport, formidable, jimp bcryptjs,
-                                nodemailer, express-validator, csrf, Template Engines,
-                                etc. Los usuarios y sus sesiones activas se almacenan en
-                                MongoDB.
-                            </p>
-                        </div>
-                    </div>
-                </a>
-                <a href="https://dashboard-tmwc.onrender.com" target="_blank">
-                    <div class="card">
-                        <div class="card-img-container">
-                            <img src="images/dashboard.png" alt="" />
-                        </div>
-                        <div class="info">
-                            <h1>Dashboard Perfumall</h1>
-                            <p>
-                                Métricas sobre el sitio Perfumal hecho con React, en el
-                                que muestra estadisticas tales como la cantidad de
-                                productos, marcas, usuarios, búsqueda de usuarios y
-                                productos, último usuario y producto registrados, cantidad
-                                de productos por marca, etc. Para mostrar estas
-                                analiticas, se realizó una serie de algoritmos sobre los
-                                datos consumidos por la api de Perfumall intentando hacer
-                                la menor posible de peticiones a la base de datos.
-                            </p>
-                        </div>
-                    </div>
-                </a>
-                <a
-                    href="https://frontend-mentor-challenge-sass.onrender.com"
-                    target="_blank"
-                >
-                    <div class="card">
-                        <div class="card-img-container">
-                            <img src="images/frontend-mentor.png" alt="" />
-                        </div>
-                        <div class="info">
-                            <h1>Frontend Mentor Challenge</h1>
-                            <p>
-                                Challenge de Frontend Mentor, sitio estático realizado con
-                                Javascript, HTML y SASS
-                            </p>
-                        </div>
-                    </div>
-                </a>
-                <a
-                    href="https://mercadoliebre-clon-digitalhouse.onrender.com/"
-                    target="_blank"
-                >
-                    <div class="card">
-                        <div class="card-img-container">
-                            <img src="images/mercadoliebre.png" alt="" />
-                        </div>
-                        <div class="info">
-                            <h1>Clon Mercado Libre</h1>
-                            <p>
-                                Trabajo práctico de Digital House, el cual es un clon de
-                                mercadolibre siguiendo consignas determinadas. Realizado
-                                con HTML y CSS
-                            </p>
-                        </div>
-                    </div>
-                </a>
-                <a href="https://shorturlv2-api.onrender.com/" target="_blank">
-                    <div class="card">
-                        <div class="card-img-container">
-                            <img src="images/apishort.png" alt="" />
-                        </div>
-                        <div class="info">
-                            <h1>API REST ShortUrlV2</h1>
-                            <p>
-                                API REST de version mejorada de ShortUrl, realizada con
-                                node, express y mongoDB. Comunicación segura a través de
-                                JWT y su refresh token guardado en memoria del usuario
-                            </p>
-                        </div>
-                    </div>
-                </a>
-            </section>
-            <section class="curriculum" id="curriculum">
-                <h1>CURRICULUM</h1>
-                <a target="_blank" href="./CV Fullstack Juan Heredia.pdf">
-                    <i class="fa-solid fa-download"></i>
-                </a>
-            </section>
-        </main>
-    </body>
-
-    <script
-        src="https://platform.linkedin.com/badges/js/profile.js"
-        async
-        defer
-        type="text/javascript"
-    ></script>
 </html>
