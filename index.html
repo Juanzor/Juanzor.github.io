@@ -23,6 +23,9 @@
     <link rel="stylesheet" href="index.css" />
     <!-- Smooth Scroll Library -->
     <script src="https://unpkg.com/lenis@1.1.20/dist/lenis.min.js"></script>
+    <!-- Analytics (GoatCounter) -->
+    <script data-goatcounter="https://juanzor55.goatcounter.com/count"
+            async src="//gc.zgo.at/count.js"></script>
 </head>
 
 <body class="reveal-content">
@@ -537,6 +540,94 @@
 
 
         renderProjects();
+
+        // ── Telemetría / Eventos GoatCounter ──
+        function trackEvent(path, title) {
+            if (localStorage.getItem('skipgc') === 't') return;
+            if (window.goatcounter && typeof window.goatcounter.count === 'function') {
+                window.goatcounter.count({ path, title, event: true });
+            }
+        }
+
+        function slugify(text) {
+            return text
+                .toLowerCase()
+                .normalize('NFD').replace(/[\u0300-\u036f]/g, '')
+                .replace(/[^a-z0-9]+/g, '-')
+                .replace(/^-|-$/g, '');
+        }
+
+        // 1. Secciones vistas (1 vez por sección por visita)
+        const trackedSections = new Set();
+        const sectionObserver = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (!entry.isIntersecting) return;
+                const id = entry.target.getAttribute('id');
+                if (!id || id === 'hero' || trackedSections.has(id)) return;
+                trackedSections.add(id);
+                trackEvent(`view-section-${id}`, `Sección vista: ${id}`);
+            });
+        }, { threshold: 0.35 });
+        document.querySelectorAll('section[id]').forEach(sec => sectionObserver.observe(sec));
+
+        // 2. Navegación interna (navbar y botón hero)
+        document.querySelectorAll('#main-nav a, .hero-actions a').forEach(link => {
+            link.addEventListener('click', () => {
+                const target = (link.getAttribute('href') || '').replace('#', '');
+                const source = link.closest('#main-nav') ? 'nav' : 'hero';
+                if (target) trackEvent(`click-${source}-${target}`, `Click ${source}: ${target}`);
+            });
+        });
+
+        // 3. Descarga de CV
+        const cvBtn = document.querySelector('.btn-cv-contact');
+        if (cvBtn) {
+            cvBtn.addEventListener('click', () => trackEvent('click-download-cv', 'Descargar CV'));
+        }
+
+        // 4. Métodos de contacto (WhatsApp, Email, LinkedIn, GitHub)
+        document.querySelectorAll('.contact-strip').forEach(link => {
+            link.addEventListener('click', () => {
+                const label = link.querySelector('.strip-value')?.textContent.trim() || 'contacto';
+                const href = link.getAttribute('href') || '';
+                const channel = href.includes('wa.me') ? 'whatsapp'
+                    : href.startsWith('mailto:') ? 'email'
+                    : href.includes('linkedin.com') ? 'linkedin'
+                    : href.includes('github.com') ? 'github'
+                    : slugify(label);
+                trackEvent(`click-contact-${channel}`, `Contacto: ${channel}`);
+            });
+        });
+
+        // 5. Links de experiencia y educación
+        document.querySelectorAll('.company-link, .edu-card-v2').forEach(link => {
+            link.addEventListener('click', () => {
+                const title = link.querySelector('h3')?.textContent.trim() || link.textContent.trim();
+                const prefix = link.classList.contains('company-link') ? 'company' : 'edu';
+                trackEvent(`click-${prefix}-${slugify(title)}`, `Link ${prefix}: ${title}`);
+            });
+        });
+
+        // 6. Proyectos (delegación para tarjetas cargadas dinámicamente)
+        const projectsContainer = document.getElementById('projects-container');
+        if (projectsContainer) {
+            projectsContainer.addEventListener('click', (e) => {
+                const card = e.target.closest('.project-card');
+                if (!card) return;
+                const title = card.querySelector('h3')?.textContent.trim() || 'proyecto';
+                trackEvent(`click-project-${slugify(title)}`, `Proyecto: ${title}`);
+            });
+        }
+
+        // 7. Interacción con el ticker de tecnologías (1 vez por visita)
+        let tickerTracked = false;
+        document.querySelectorAll('.tech-ticker-contained').forEach(container => {
+            container.addEventListener('pointerdown', () => {
+                if (tickerTracked) return;
+                tickerTracked = true;
+                trackEvent('interact-tech-ticker', 'Interacción con Tech Ticker');
+            });
+        });
     </script>
 </body>
 
